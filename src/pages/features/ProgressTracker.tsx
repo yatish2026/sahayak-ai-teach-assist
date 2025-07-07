@@ -6,13 +6,13 @@ import { ChartBar, ArrowLeft, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const mockStudents = [
-  { id: 1, name: "Rahul Sharma", rank: 1, assignments: 12, quizzes: 8, projects: 3, performance: 95 },
-  { id: 2, name: "Priya Singh", rank: 2, assignments: 11, quizzes: 7, projects: 3, performance: 88 },
-  { id: 3, name: "Amit Kumar", rank: 3, assignments: 10, quizzes: 6, projects: 2, performance: 82 },
+  { id: 1, name: "Diya karmakar", rank: 1, assignments: 12, quizzes: 8, projects: 3, performance: 95 },
+  { id: 2, name: "kishore kumar", rank: 2, assignments: 11, quizzes: 7, projects: 3, performance: 88 },
+  { id: 3, name: "mahesh das", rank: 3, assignments: 10, quizzes: 6, projects: 2, performance: 82 },
   { id: 4, name: "Sunita Devi", rank: 4, assignments: 9, quizzes: 6, projects: 2, performance: 78 },
-  { id: 5, name: "Ravi Patel", rank: 5, assignments: 8, quizzes: 5, projects: 2, performance: 75 },
+  { id: 5, name: "K.s shaziya", rank: 5, assignments: 8, quizzes: 5, projects: 2, performance: 75 },
   { id: 6, name: "Kavya Reddy", rank: 6, assignments: 8, quizzes: 5, projects: 1, performance: 72 },
-  { id: 7, name: "Mohan Das", rank: 7, assignments: 7, quizzes: 4, projects: 1, performance: 68 },
+  { id: 7, name: "karthik Reddy", rank: 7, assignments: 7, quizzes: 4, projects: 1, performance: 68 },
   { id: 8, name: "Sita Gupta", rank: 8, assignments: 6, quizzes: 4, projects: 1, performance: 65 },
   { id: 9, name: "Arjun Yadav", rank: 9, assignments: 6, quizzes: 3, projects: 1, performance: 62 },
   { id: 10, name: "Pooja Jain", rank: 10, assignments: 5, quizzes: 3, projects: 0, performance: 58 }
@@ -30,9 +30,9 @@ export const ProgressTracker = () => {
     <div className="min-h-screen bg-background p-4">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-6 flex items-center gap-4">
-          <Button 
-            variant="ghost" 
-            size="sm" 
+          <Button
+            variant="ghost"
+            size="sm"
             onClick={() => navigate(-1)}
             className="flex items-center gap-2"
           >
@@ -50,7 +50,7 @@ export const ProgressTracker = () => {
             <p className="text-muted-foreground">Monitor individual student performance and identify learning gaps</p>
           </CardHeader>
           <CardContent>
-            <Button 
+            <Button
               onClick={assignBasedOnPerformance}
               className="w-full mb-6 bg-gradient-primary"
             >
@@ -74,7 +74,7 @@ export const ProgressTracker = () => {
                     <div className="text-xs text-muted-foreground">Overall Performance</div>
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-3 gap-4 mb-4">
                   <div className="text-center">
                     <div className="text-lg font-semibold">{student.assignments}</div>
@@ -89,7 +89,7 @@ export const ProgressTracker = () => {
                     <div className="text-xs text-muted-foreground">Projects</div>
                   </div>
                 </div>
-                
+
                 <Progress value={student.performance} className="h-2" />
               </CardContent>
             </Card>

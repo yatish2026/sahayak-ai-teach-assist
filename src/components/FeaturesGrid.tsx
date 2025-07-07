@@ -87,7 +87,16 @@ export const FeaturesGrid = () => {
                 comingSoon={feature.comingSoon}
                 onClick={() => {
                   console.log(`Opening ${feature.title}`);
-                  // TODO: Navigate to feature page
+                  const featurePaths: { [key: string]: string } = {
+                    "Hyper-Local Story Generator": "/features/story-generator",
+                    "Worksheet Generator": "/features/worksheet-generator",
+                    "Speaking Coach (Vaani Saathi)": "/features/speaking-coach"
+                  };
+                  
+                  const path = featurePaths[feature.title];
+                  if (path) {
+                    window.location.href = path;
+                  }
                 }}
               />
             </div>

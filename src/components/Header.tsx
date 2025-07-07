@@ -22,10 +22,17 @@ export const Header = () => {
             <Button variant="ghost" size="sm">
               About
             </Button>
-            <Button variant="outline" size="sm">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => window.location.href = '/teacher-login'}
+            >
               Teacher Login
             </Button>
-            <Button size="sm">
+            <Button 
+              size="sm"
+              onClick={() => window.location.href = '/student-login'}
+            >
               Student Login
             </Button>
           </div>

@@ -8,6 +8,10 @@ import NotFound from "./pages/NotFound";
 import { StoryGenerator } from "./pages/features/StoryGenerator";
 import { WorksheetGenerator } from "./pages/features/WorksheetGenerator";
 import { SpeakingCoach } from "./pages/features/SpeakingCoach";
+import { VisualAidCreator } from "./pages/features/VisualAidCreator";
+import { ProgressTracker } from "./pages/features/ProgressTracker";
+import { LessonPlanGenerator } from "./pages/features/LessonPlanGenerator";
+import { DramaScripts } from "./pages/features/DramaScripts";
 import { TeacherLogin } from "./pages/auth/TeacherLogin";
 import { StudentLogin } from "./pages/auth/StudentLogin";
 import { TeacherDashboard } from "./pages/dashboards/TeacherDashboard";
@@ -28,6 +32,10 @@ const App = () => (
           <Route path="/features/story-generator" element={<StoryGenerator />} />
           <Route path="/features/worksheet-generator" element={<WorksheetGenerator />} />
           <Route path="/features/speaking-coach" element={<SpeakingCoach />} />
+          <Route path="/features/visual-aid-creator" element={<VisualAidCreator />} />
+          <Route path="/features/progress-tracker" element={<ProgressTracker />} />
+          <Route path="/features/lesson-plan-generator" element={<LessonPlanGenerator />} />
+          <Route path="/features/drama-scripts" element={<DramaScripts />} />
           
           {/* Auth Pages */}
           <Route path="/teacher-login" element={<TeacherLogin />} />

@@ -100,10 +100,19 @@ export const WorksheetGenerator = () => {
                         {worksheet.grade} • {worksheet.difficulty}
                       </p>
                     </div>
-                    <Button size="sm" variant="outline">
-                      <Download className="w-4 h-4 mr-2" />
-                      Download
-                    </Button>
+                    <div className="flex gap-2">
+                      <Button size="sm" variant="outline">
+                        <Download className="w-4 h-4 mr-2" />
+                        Download
+                      </Button>
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-primary"
+                        onClick={() => alert(`${worksheet.title} assigned to students based on performance tracking!`)}
+                      >
+                        Send as Assignment
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

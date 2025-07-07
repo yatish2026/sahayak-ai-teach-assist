@@ -87,44 +87,86 @@ export const SpeakingCoach = () => {
         </Card>
 
         {feedback && (
-          <Card>
-            <CardHeader>
-              <CardTitle>Speech Analysis Results</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-muted/50 rounded-lg">
-                  <div className="text-2xl font-bold text-primary">{feedback.pronunciation}%</div>
-                  <div className="text-sm text-muted-foreground">Pronunciation</div>
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>🎤 Speech Analysis Results</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <h4 className="font-semibold mb-2">Speech Transcript:</h4>
+                  <div className="bg-muted/50 p-3 rounded text-sm italic">
+                    "Hello, my name is [Student Name]. Today I want to talk about water conservation..."
+                  </div>
                 </div>
-                <div className="text-center p-4 bg-muted/50 rounded-lg">
-                  <div className="text-2xl font-bold text-primary">{feedback.clarity}%</div>
-                  <div className="text-sm text-muted-foreground">Clarity</div>
+                
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="text-center p-4 bg-muted/50 rounded-lg">
+                    <div className="text-2xl font-bold text-primary">{feedback.pronunciation}%</div>
+                    <div className="text-sm text-muted-foreground">Pronunciation Score</div>
+                  </div>
+                  <div className="text-center p-4 bg-muted/50 rounded-lg">
+                    <div className="text-2xl font-bold text-primary">{feedback.clarity}%</div>
+                    <div className="text-sm text-muted-foreground">Clarity Score</div>
+                  </div>
+                  <div className="text-center p-4 bg-muted/50 rounded-lg">
+                    <div className="text-2xl font-bold text-primary">{feedback.confidence}%</div>
+                    <div className="text-sm text-muted-foreground">Confidence Score</div>
+                  </div>
                 </div>
-                <div className="text-center p-4 bg-muted/50 rounded-lg">
-                  <div className="text-2xl font-bold text-primary">{feedback.confidence}%</div>
-                  <div className="text-sm text-muted-foreground">Confidence</div>
+                
+                <div>
+                  <h4 className="font-medium mb-3">💡 Suggestions for Improvement</h4>
+                  <ul className="space-y-2">
+                    {feedback.suggestions.map((suggestion: string, index: number) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-sm">{suggestion}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-              
-              <div>
-                <h4 className="font-medium mb-3">Suggestions for Improvement</h4>
-                <ul className="space-y-2">
-                  {feedback.suggestions.map((suggestion: string, index: number) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-sm">{suggestion}</span>
-                    </li>
+                
+                <div className="flex gap-2">
+                  <Button variant="outline" size="sm">Save Progress</Button>
+                  <Button variant="outline" size="sm">Try Again</Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>🏆 Speaking Leaderboard</CardTitle>
+                <p className="text-sm text-muted-foreground">Top 5 students based on recent speaking scores</p>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {[
+                    { name: "Priya Singh", score: 92, message: "Excellent pronunciation!" },
+                    { name: "Rahul Sharma", score: 88, message: "Great confidence level!" },
+                    { name: "Amit Kumar", score: 85, message: "Clear and steady speech!" },
+                    { name: "Sunita Devi", score: 82, message: "Good improvement!" },
+                    { name: "Ravi Patel", score: 79, message: "Keep practicing!" }
+                  ].map((student, index) => (
+                    <div key={index} className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                          {index + 1}
+                        </div>
+                        <div>
+                          <div className="font-medium">{student.name}</div>
+                          <div className="text-xs text-muted-foreground">{student.message}</div>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="font-bold text-primary">{student.score}%</div>
+                      </div>
+                    </div>
                   ))}
-                </ul>
-              </div>
-              
-              <div className="flex gap-2">
-                <Button variant="outline" size="sm">Save Progress</Button>
-                <Button variant="outline" size="sm">Try Again</Button>
-              </div>
-            </CardContent>
-          </Card>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         )}
       </div>
     </div>

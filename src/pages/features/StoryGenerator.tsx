@@ -72,15 +72,51 @@ export const StoryGenerator = () => {
         {story && (
           <Card>
             <CardHeader>
-              <CardTitle>Generated Story</CardTitle>
+              <CardTitle>📚 Story Title: The Journey of a Water Drop</CardTitle>
+              <p className="text-sm text-muted-foreground">Language: English (Simple, classroom-friendly) | Science Topic: The Water Cycle</p>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-6">
               <div className="bg-muted/50 p-4 rounded-lg">
-                <p className="leading-relaxed">{story}</p>
+                <h4 className="font-semibold mb-3">Generated Story:</h4>
+                <div className="leading-relaxed text-sm space-y-3">
+                  <p>In a small village called Shantipur, a boy named Ravi was learning about the water cycle in school. His teacher asked, "Can anyone tell me where water comes from?"</p>
+                  
+                  <p>Ravi closed his eyes and imagined, "What if I was a drop of water?"</p>
+                  
+                  <p>"I would rise up from the river as steam when the sun shines. I would float in the sky as part of the clouds. Then, when the clouds get heavy, I would fall as rain back to the earth. I would flow into rivers, soak into the soil, help plants grow, and again rise back to the sky as vapor!"</p>
+                  
+                  <p>The teacher smiled and explained, "This is called the Water Cycle. It is nature's way of recycling water so that life can survive on Earth."</p>
+                  
+                  <p>Ravi understood how important water is. He promised to tell all his friends, "Don't waste water, because every drop is precious!"</p>
+                </div>
               </div>
-              <div className="mt-4 flex gap-2">
+              
+              <div className="bg-gradient-primary/10 p-4 rounded-lg">
+                <h4 className="font-semibold mb-3">📖 Simple Science Explanation Inside the Story:</h4>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span>Evaporation — Water turns to vapor</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span>Condensation — Clouds form</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span>Precipitation — Rain falls</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span>Infiltration — Water enters soil</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex gap-2">
                 <Button variant="outline" size="sm">Save Story</Button>
-                <Button variant="outline" size="sm">Share with Students</Button>
+                <Button variant="outline" size="sm">Download PDF</Button>
+                <Button size="sm" className="bg-gradient-primary">Share with Students</Button>
               </div>
             </CardContent>
           </Card>

@@ -1,4 +1,20 @@
 import { Button } from "@/components/ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Languages } from "lucide-react";
+
+const languages = [
+  { code: 'en', name: 'English' },
+  { code: 'hi', name: 'हिंदी' },
+  { code: 'kn', name: 'ಕನ್ನಡ' },
+  { code: 'te', name: 'తెలుగు' },
+  { code: 'ta', name: 'தமிழ்' },
+  { code: 'mr', name: 'मराठी' },
+  { code: 'gu', name: 'ગુજરાતી' },
+  { code: 'bn', name: 'বাংলা' },
+  { code: 'ml', name: 'മലയാളം' },
+  { code: 'pa', name: 'ਪੰਜਾਬੀ' },
+  { code: 'ur', name: 'اردو' }
+];
 
 export const Header = () => {
   return (
@@ -11,11 +27,26 @@ export const Header = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-foreground">Sahayak</h1>
-              <p className="text-xs text-muted-foreground">AI Agent</p>
+              <p className="text-xs text-muted-foreground">AI Teaching Assistant</p>
             </div>
           </div>
           
           <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
+              <Languages className="w-4 h-4 text-muted-foreground" />
+              <Select defaultValue="en">
+                <SelectTrigger className="w-32 h-8 text-xs">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {languages.map((lang) => (
+                    <SelectItem key={lang.code} value={lang.code}>
+                      {lang.name}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
             <Button variant="ghost" size="sm">
               Features
             </Button>

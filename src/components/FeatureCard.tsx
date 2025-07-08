@@ -9,6 +9,7 @@ interface FeatureCardProps {
   category: "AI" | "Teacher" | "Student" | "Content" | "Assessment";
   onClick?: () => void;
   comingSoon?: boolean;
+  emoji?: string;
 }
 
 const categoryStyles = {
@@ -25,7 +26,8 @@ export const FeatureCard = ({
   icon: Icon, 
   category, 
   onClick,
-  comingSoon = false 
+  comingSoon = false,
+  emoji
 }: FeatureCardProps) => {
   return (
     <Card 
@@ -44,12 +46,19 @@ export const FeatureCard = ({
           </Badge>
         )}
         
-        <div className={`
-          w-12 h-12 rounded-lg flex items-center justify-center mb-4
-          ${categoryStyles[category]} shadow-feature
-          group-hover:scale-110 transition-transform duration-300
-        `}>
-          <Icon className="w-6 h-6" />
+        <div className="relative mb-4">
+          {emoji && (
+            <div className="absolute -top-2 -right-2 text-2xl opacity-70 group-hover:scale-110 transition-transform duration-300">
+              {emoji}
+            </div>
+          )}
+          <div className={`
+            w-12 h-12 rounded-lg flex items-center justify-center
+            ${categoryStyles[category]} shadow-feature
+            group-hover:scale-110 transition-transform duration-300
+          `}>
+            <Icon className="w-6 h-6" />
+          </div>
         </div>
         
         <div className="flex-1">

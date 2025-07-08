@@ -21,6 +21,11 @@ import { TeacherLogin } from "./pages/auth/TeacherLogin";
 import { StudentLogin } from "./pages/auth/StudentLogin";
 import { TeacherDashboard } from "./pages/dashboards/TeacherDashboard";
 import { StudentDashboard } from "./pages/dashboards/StudentDashboard";
+import { VoiceToContent } from "./pages/features/VoiceToContent";
+import { DoubtSolver } from "./pages/features/DoubtSolver";
+import { OfflinePacks } from "./pages/features/OfflinePacks";
+import { ParentCommunication } from "./pages/features/ParentCommunication";
+import { PeerTeaching } from "./pages/features/PeerTeaching";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +46,13 @@ const App = () => (
           <Route path="/features/progress-tracker" element={<ProgressTracker />} />
           <Route path="/features/lesson-plan-generator" element={<LessonPlanGenerator />} />
           <Route path="/features/drama-scripts" element={<DramaScripts />} />
+          
+          {/* New Feature Pages */}
+          <Route path="/features/voice-to-content" element={<VoiceToContent />} />
+          <Route path="/features/doubt-solver" element={<DoubtSolver />} />
+          <Route path="/features/offline-packs" element={<OfflinePacks />} />
+          <Route path="/features/parent-communication" element={<ParentCommunication />} />
+          <Route path="/features/peer-teaching" element={<PeerTeaching />} />
           
           {/* Student Feature Pages */}
           <Route path="/features/story-reading" element={<StoryReading />} />

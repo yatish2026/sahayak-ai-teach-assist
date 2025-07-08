@@ -12,6 +12,11 @@ import { VisualAidCreator } from "./pages/features/VisualAidCreator";
 import { ProgressTracker } from "./pages/features/ProgressTracker";
 import { LessonPlanGenerator } from "./pages/features/LessonPlanGenerator";
 import { DramaScripts } from "./pages/features/DramaScripts";
+import { StoryReading } from "./pages/features/StoryReading";
+import { LearningGames } from "./pages/features/LearningGames";
+import { VisualLearning } from "./pages/features/VisualLearning";
+import { TrackProgress } from "./pages/features/TrackProgress";
+import { Assignments } from "./pages/features/Assignments";
 import { TeacherLogin } from "./pages/auth/TeacherLogin";
 import { StudentLogin } from "./pages/auth/StudentLogin";
 import { TeacherDashboard } from "./pages/dashboards/TeacherDashboard";
@@ -28,7 +33,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           
-          {/* Feature Pages */}
+          {/* Teacher Feature Pages */}
           <Route path="/features/story-generator" element={<StoryGenerator />} />
           <Route path="/features/worksheet-generator" element={<WorksheetGenerator />} />
           <Route path="/features/speaking-coach" element={<SpeakingCoach />} />
@@ -36,6 +41,13 @@ const App = () => (
           <Route path="/features/progress-tracker" element={<ProgressTracker />} />
           <Route path="/features/lesson-plan-generator" element={<LessonPlanGenerator />} />
           <Route path="/features/drama-scripts" element={<DramaScripts />} />
+          
+          {/* Student Feature Pages */}
+          <Route path="/features/story-reading" element={<StoryReading />} />
+          <Route path="/features/learning-games" element={<LearningGames />} />
+          <Route path="/features/visual-learning" element={<VisualLearning />} />
+          <Route path="/features/track-progress" element={<TrackProgress />} />
+          <Route path="/features/assignments" element={<Assignments />} />
           
           {/* Auth Pages */}
           <Route path="/teacher-login" element={<TeacherLogin />} />

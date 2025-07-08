@@ -2,7 +2,7 @@ import { Header } from "@/components/Header";
 import { FeatureCard } from "@/components/FeatureCard";
 import { Footer } from "@/components/Footer";
 import { 
-  Book, GraduationCap, School, Image
+  Book, GraduationCap, School, Image, TrendingUp, ClipboardList, Gamepad2
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -24,7 +24,7 @@ const studentFeatures = [
   {
     title: "Learning Games",
     description: "Play educational games designed for your grade level",
-    icon: School,
+    icon: Gamepad2,
     category: "Student" as const,
     path: "/features/learning-games"
   },
@@ -34,6 +34,20 @@ const studentFeatures = [
     icon: Image,
     category: "Content" as const,
     path: "/features/visual-learning"
+  },
+  {
+    title: "Track Your Progress",
+    description: "Monitor your learning progress in real-time",
+    icon: TrendingUp,
+    category: "Assessment" as const,
+    path: "/features/track-progress"
+  },
+  {
+    title: "Assignments",
+    description: "Complete assignments given by your teacher",
+    icon: ClipboardList,
+    category: "Assessment" as const,
+    path: "/features/assignments"
   }
 ];
 
